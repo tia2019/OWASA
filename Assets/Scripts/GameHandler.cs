@@ -35,7 +35,7 @@ public class GameHandler : MonoBehaviour
     // full nbar is at 2.75f 
     // full pbar is at 2.91f
     float n1, n3, p1, p2, p3, p4 = 0f;
-
+    public float airflow1, airflow2 = 0f;
     float r, start = 0f;
 
     float timer = 3f;
@@ -51,7 +51,7 @@ public class GameHandler : MonoBehaviour
         
         trigger1.tank1event += setN1;
         trigger1.tank1event += setP1;
-
+    
         trigger2.tank2event += setN2;
         trigger2.tank2event += setP2;
         trigger2.tank2event += decreaseP2;
@@ -92,31 +92,33 @@ public class GameHandler : MonoBehaviour
     public void setN2()
     {
 
-        nitrogenbar2.setSize(nitrogenbar1.getSize());
+        nitrogenbar2.setSize(nitrogenbar1.getSize()*.8f);
     }
 
     public void setN3()
     {
         
-        nitrogenbar3.setSize(nitrogenbar2.getSize());
+        nitrogenbar3.setSize(nitrogenbar2.getSize()*.5f);
         n3 = nitrogenbar2.getSize();
         r = Random.Range(0f, .8f);
     }
 
     public void setN4()
     {
-        nitrogenbar4.setSize(nitrogenbar3.getSize()); 
+        nitrogenbar4.setSize(nitrogenbar3.getSize()*.27f); 
         nlevel = System.Math.Round((nitrogenbar4.getSize()/2.75f), 2);
         nLevelTxt.text = "N:" + nlevel*100f + "%";
     }
 
+    float decn1 = 0f;
     public void decreaseN1()
     {
-
+        
         if( n1 > 1)
         {
-            nitrogenbar1.setSize(n1);
-            n1 -= .008f;
+            decn1 = nitrogenbar1.getSize();
+            decn1 -= .008f;
+            nitrogenbar2.setSize(decn1);
         }
     }
 
@@ -159,7 +161,13 @@ public class GameHandler : MonoBehaviour
 
     public void setP2()
     { 
-            phosphorusbar2.setSize(phosphorusbar1.getSize());        
+            if(airflow1 == 0){
+            p2 = phosphorusbar1.getSize();
+        } else {
+            p2 = phosphorusbar1.getSize()*airflow1;
+
+        }
+            phosphorusbar2.setSize(p2);  
     }
     public void setP3()
     { 
@@ -167,27 +175,24 @@ public class GameHandler : MonoBehaviour
     }
      public void setP4()
     {
-        phosphorusbar4.setSize(phosphorusbar3.getSize());
+       if(airflow2 == 0){
+            p4 = phosphorusbar3.getSize();
+        } else {
+            p4 = phosphorusbar3.getSize()*airflow2;
+        }
+        phosphorusbar4.setSize(p4);
         plevel = System.Math.Round((phosphorusbar4.getSize()/2.91f), 2);
         pLevelTxt.text = "P:" + plevel*100f + "%";
     }
 
 
-    public void decreaseP2()
+       public void decreaseP2()
     {
-        
-        p2 = phosphorusbar2.getSize();
-        float airflow = slider2.value;
-        //todo work on changing speed of decrease
-        
-       if(airflow!=0 && p2 > 0.1){
-        p2 -= airflow/6;
-        phosphorusbar2.setSize(p2);
-        // Debug.Log("p2:" + p2 + "/n airflow" + airflow);
-       }
+        airflow1 = 1.01f-(slider2.value/0.05f);
  
     }
-  
+
+    
     public void increaseP3 ()
     {
         float size = phosphorusbar3.getSize();
@@ -197,27 +202,14 @@ public class GameHandler : MonoBehaviour
         }
     }
 
+   
+
     public void decreaseP4()
     {
-        p4 = phosphorusbar4.getSize();
-        float airflow = slider4.value;
-        //todo work on changing speed of decrease
-        
-       if(airflow!=0 && p4 > 0.1){
-        p4 -= airflow/6;
-        phosphorusbar4.setSize(p4);
-        // Debug.Log("p4:" + p4 + "/n airflow" + airflow);
-       }
-        
+        airflow2 = 1.01f-(slider4.value/0.05f);
+   
         
     }
 
-    public double getN(){
-        return nlevel;
-    }
-
-    public double getP(){
-        return plevel;
-    }
 }
 

@@ -27,7 +27,7 @@ public class DayNight : MonoBehaviour
     {
 
         ChangeTime();
-        // triggerEndscene();
+        triggerEndscene();
     }
 
     public void triggerEndscene(){

@@ -81,13 +81,13 @@
     <Compile Include="Assets\CodeMonkey\Utils\World_Sprite.cs" />
     <Compile Include="Assets\coll.cs" />
     <Compile Include="Assets\GaugeControl\Assets\Scripts\Testing\TestGaugeRangeChange.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\Scripts\bubbles.cs" />
     <Compile Include="Assets\Scripts\ColorChange.cs" />
     <Compile Include="Assets\Scripts\EndScene.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
     <Compile Include="Assets\Scripts\GaugeController.cs" />
     <Compile Include="Assets\Scripts\LightIndicator.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\NBarAir.cs" />
     <Compile Include="Assets\Scripts\PBarAir.cs" />
     <Compile Include="Assets\Scripts\Trigger1.cs" />
