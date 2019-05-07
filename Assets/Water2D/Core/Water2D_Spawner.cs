@@ -5,20 +5,22 @@
 	using UnityEngine.UI;
 	using DynamicLight2D;
 
-	public struct microSpawn{
-		public Vector3 pos;
-		public int amount;
-		public Vector2 initVel;
+    public struct microSpawn
+    {
+        public Vector3 pos;
+        public int amount;
+        public Vector2 initVel;
 
-		public microSpawn(Vector3 pos, int amount, Vector2 initVel)
-		{
-			this.pos = pos;
-			this.amount = amount;
-			this.initVel = initVel;
-		}
-	}
+        public microSpawn(Vector3 pos, int amount, Vector2 initVel)
+        {
+            this.pos = pos;
+            this.amount = amount;
+            this.initVel = initVel;
+        }
 
-	public class Water2D_Spawner : MonoBehaviour
+    }
+
+    public class Water2D_Spawner : MonoBehaviour
 	{
 
 		public static Water2D_Spawner instance;
@@ -42,17 +44,17 @@
 		/// <summary>
 		/// The size of each drop.
 		/// </summary>
-		[Range (0f,20f)]	public float size = .45f;
+		[Range (0f,10f)]	public float size = 1f;
 
 		/// <summary>
 		/// The life time of each particle.
 		/// </summary>
-		[Range (0f,100000f)] public float LifeTime = 5f;
+		[Range (0f,1000f)] public float LifeTime = 50f;
 
 		/// <summary>
 		/// The delay between particles emission.
 		/// </summary>
-		[Range (0f,1f)] public float DelayBetweenParticles = 0.05f;
+		[Range (0f,1f)] public float DelayBetweenParticles = 0f;
 
 		/// <summary>
 		/// The water material.

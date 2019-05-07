@@ -134,7 +134,6 @@ MonoBehaviour:
   StrokeColor: {r: 0.015686275, g: 0.6117647, b: 1, a: 1}
   initSpeed: {x: 0, y: -4}
   DynamicChanges: 1
-  btn: 0
 --- !u!114 &1995922807381703570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,8 +328,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995922806268188173}
-  m_LocalRotation: {x: 0.034045022, y: 0.031345017, z: 0.70540154, w: 0.70729566}
-  m_LocalPosition: {x: 0.42046744, y: 1.4501252, z: -0.043140158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7, y: 0.26, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1995922806309330423}
@@ -339,7 +338,7 @@ Transform:
   - {fileID: 1995922806808618548}
   m_Father: {fileID: 486282}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.22600001, y: 5.3, z: 89.857}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1995922806273123975
 GameObject:
   m_ObjectHideFlags: 0
